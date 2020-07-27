@@ -5,11 +5,6 @@ use Restserver\Libraries\REST_Controller;
 
 class Employees extends REST_Controller
 {
-	public function __construct()
-    {
-        parent::__construct();
-	}
-	
 	public function index_get($id = NULL) {
 		$this->db->select("*");
 		$this->db->from("employees");
@@ -47,7 +42,7 @@ class Employees extends REST_Controller
 	}
 
 	public function index_post() {
-		$employee =[
+		$employee = [
 			'first_name' => $this->post('first_name'),
 			'last_name' => $this->post('last_name'),
 			'position_name' => $this->post('position_name'),
